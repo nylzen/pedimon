@@ -33,6 +33,10 @@ a {
   text-decoration: none;
 }
 
+a:visited {
+  color: var(--blue);
+}
+
 li {
   list-style: none;
 }
@@ -74,9 +78,22 @@ nav {
 
 .item {
   width: 100%;
-  text-align: center;
   text-transform: uppercase;
   display: none;
+  justify-content: center;
+  padding: 20px;
+  align-items: center;
+  text-align: center;
+  font-weight: var(--bold);
+  font-size: 1.5rem;
+}
+
+.item:first-child {
+  margin-top: 30px;
+}
+
+.item a {
+  color: var(--blue);
 }
 
 .menu .logo {
@@ -382,6 +399,21 @@ footer .title {
 
 /* Desktop */
 @media (min-width: 1024px) {
+  header {
+    padding-top: 0;
+  }
+  #navbar {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    transition: top 0.5s;
+    background-color: var(--yellow);
+    z-index: 3;
+    -webkit-transition: top 0.5s;
+    -moz-transition: top 0.5s;
+    -ms-transition: top 0.5s;
+    -o-transition: top 0.5s;
+}
   /* Menu */
   .menu {
     flex-wrap: nowrap;
@@ -396,6 +428,10 @@ footer .title {
     width: auto;
     /* background: red; */
     padding: 20px;
+    font-size: 1.1rem;
+  }
+  .item:first-child {
+    margin: 0;
   }
 
   .btn__container {
@@ -420,6 +456,7 @@ footer .title {
     justify-content: center;
     padding: 5rem 0;
     gap: 50px;
+    padding-top: 10rem;
   }
 
   .about__content {
@@ -473,207 +510,216 @@ footer .title {
   .cart__container {
     max-width: 1000px;
   }
-}
 
-/* Pseudo clases */
-.menu li a {
-  position: relative;
-}
-
-a:visited {
-  color: var(--blue);
-}
-
-.item {
-  position: relative;
-}
-
-.menu .item:hover::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 90%;
-  height: 5px;
-  background: var(--blue);
-  border-radius: 8px;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  -ms-border-radius: 8px;
-  -o-border-radius: 8px;
-}
-
-/* Boton */
-.btn:hover {
-  background: #072853;
-  transform: scale(1.01);
-  -webkit-transform: scale(1.01);
-  -moz-transform: scale(1.01);
-  -ms-transform: scale(1.01);
-  -o-transform: scale(1.01);
-  transition: all 0.3s ease;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -ms-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-}
-
-.btn:active {
-  transform: scale(0.99);
-  -webkit-transform: scale(0.99);
-  -moz-transform: scale(0.99);
-  -ms-transform: scale(0.99);
-  -o-transform: scale(0.99);
-}
-
-/* cards */
-.card {
-  border: 1px solid rgba(0, 0, 0, 0);
-}
-
-.card:hover {
-  border: 1px solid white;
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
-  cursor: pointer;
-
-  box-shadow: 1px 0px 39px -14px rgba(0, 0, 0, 1);
-  -webkit-box-shadow: 1px 0px 39px -14px rgba(0, 0, 0, 1);
-  -moz-box-shadow: 1px 0px 39px -14px rgba(0, 0, 0, 1);
-}
-
-/* Productos */
-.product {
-  box-shadow: none;
-}
-
-.product:hover {
-  box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.3);
-  transition: all 0.4s ease;
-  -webkit-transition: all 0.4s ease;
-  -moz-transition: all 0.4s ease;
-  -ms-transition: all 0.4s ease;
-  -o-transition: all 0.4s ease;
-}
-
-.product__btn:hover {
-  cursor: pointer;
-  transition: all 0.3s ease;
-  background: #fed334;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -ms-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-}
-
-.product img:hover {
-  transform: rotate(25deg);
-  -webkit-transform: rot;
-  -moz-transform: rot;
-  -ms-transform: rot;
-  -o-transform: rot;
-  transition: all 0.5s ease;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -ms-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-}
-
-/* Sin stock */
-.sinStock:hover {
-  transform: rotate(15deg);
-  cursor: pointer;
-  transition: all 0.3s ease;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -ms-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  -webkit-transform: rotate(15deg);
-  -moz-transform: rotate(15deg);
-  -ms-transform: rotate(15deg);
-  -o-transform: rotate(15deg);
-}
-
-/* Data descr */
-.cart__item--content {
-  position: relative;
-}
-p[data-descr]:hover::after {
-  content: attr(data-descr);
-  position: absolute;
-  cursor: pointer;
-  margin-left: 20px;
-  width: 100px;
-  height: 50px;
-  background-color: var(--blue);
-  color: white;
-  padding: 20px;
-}
-
-.item-img:hover {
-  transition: all 0.5s ease;
-  transform: rotate(360deg);
-  -webkit-transform: rotate(360deg);
-  -moz-transform: rotate(360deg);
-  -ms-transform: rotate(360deg);
-  -o-transform: rotate(360deg);
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -ms-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-}
-
-/* Cart btn */
-.cart__btn:hover {
-  cursor: pointer;
-  background: #fed334;
-  transform: scale(1.1);
-  transition: all 0.3s ease;
-  -webkit-transform: scale(1.1);
-  -moz-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  -o-transform: scale(1.1);
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -ms-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-}
-
-/* Animaciones */
-.card:nth-child(1) {
-  animation: floating 3s ease infinite alternate;
-  -webkit-animation: floating 3s ease infinite alternate;
-}
-.card:nth-child(2) {
-  animation: floating 3s 0.5s ease infinite alternate;
-  -webkit-animation: floating 3s 0.55555s ease infinite alternate;
-}
-.card:nth-child(3) {
-  animation: floating 3s 1s ease infinite alternate;
-  -webkit-animation: floating 3s 1s ease infinite alternate;
-}
-
-.cokemon {
-  animation: floating 2s ease infinite alternate;
-  -webkit-animation: floating 2s ease infinite alternate;
-}
-
-@keyframes floating {
-  from {
-    transform: translateY(20px);
-    -webkit-transform: translateY(20px);
-    -moz-transform: translateY(20px);
-    -ms-transform: translateY(20px);
-    -o-transform: translateY(20px);
+  /* Pseudo clases */
+  .menu li a {
+    position: relative;
   }
-  to {
-    transform: translateY(-50px);
-    -webkit-transform: translateY(-50px);
-    -moz-transform: translateY(-50px);
-    -ms-transform: translateY(-50px);
-    -o-transform: translateY(-50px);
+
+  a {
+    color: var(--blue);
   }
+  a:visited {
+    color: var(--blue);
+  }
+
+  .container-items {
+    gap: 50px;
+  }
+  .item {
+    position: relative;
+  }
+
+  .menu .item-link::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    background: var(--blue);
+    transform-origin: bottom right;
+    transition: transform 0.15s linear;
+    -webkit-transform: scaleX(0);
+    -moz-transform: scaleX(0);
+    -ms-transform: scaleX(0);
+    -o-transform: scaleX(0);
+    -webkit-transition: transform 0.15s linear;
+    -moz-transition: transform 0.15s linear;
+    -ms-transition: transform 0.15s linear;
+    -o-transition: transform 0.15s linear;
+  }
+
+  .menu .item-link:hover::after {
+    transform-origin: bottom left;
+    transform: scaleX(1);
+    -webkit-transform: scaleX(1);
+    -moz-transform: scaleX(1);
+    -ms-transform: scaleX(1);
+    -o-transform: scaleX(1);
+  }
+
+  /* Boton */
+  .btn:hover {
+    background: #072853;
+    transform: scale(1.01);
+    -webkit-transform: scale(1.01);
+    -moz-transform: scale(1.01);
+    -ms-transform: scale(1.01);
+    -o-transform: scale(1.01);
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+  }
+
+  .btn:active {
+    transform: scale(0.99);
+    -webkit-transform: scale(0.99);
+    -moz-transform: scale(0.99);
+    -ms-transform: scale(0.99);
+    -o-transform: scale(0.99);
+  }
+
+  /* cards */
+  .card {
+    border: 1px solid rgba(0, 0, 0, 0);
+  }
+
+  .card:hover {
+    border: 1px solid white;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    cursor: pointer;
+
+    box-shadow: 1px 0px 39px -14px rgba(0, 0, 0, 1);
+    -webkit-box-shadow: 1px 0px 39px -14px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 1px 0px 39px -14px rgba(0, 0, 0, 1);
+  }
+
+  /* Productos */
+  .product {
+    box-shadow: none;
+  }
+
+  .product:hover {
+    box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s ease;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -ms-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+  }
+
+  .product__btn:hover {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: #fed334;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+  }
+
+  .product img:hover {
+    transform: rotate(25deg);
+    -webkit-transform: rot;
+    -moz-transform: rot;
+    -ms-transform: rot;
+    -o-transform: rot;
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+  }
+
+  /* Sin stock */
+  /* .sinStock:hover {
+    transform: rotate(15deg);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -webkit-transform: rotate(15deg);
+    -moz-transform: rotate(15deg);
+    -ms-transform: rotate(15deg);
+    -o-transform: rotate(15deg);
+  } */
+
+  .item-img:hover {
+    transition: all 0.5s ease;
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+  }
+
+  /* Cart btn */
+  .cart__btn:hover {
+    cursor: pointer;
+    background: #fed334;
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+  }
+
+  /* Animaciones */
+  .card:nth-child(1) {
+    animation: floating 3s ease infinite alternate;
+    -webkit-animation: floating 3s ease infinite alternate;
+  }
+  .card:nth-child(2) {
+    animation: floating 3s 0.5s ease infinite alternate;
+    -webkit-animation: floating 3s 0.55555s ease infinite alternate;
+  }
+  .card:nth-child(3) {
+    animation: floating 3s 1s ease infinite alternate;
+    -webkit-animation: floating 3s 1s ease infinite alternate;
+  }
+
+  .cokemon {
+    animation: floating 2s ease infinite alternate;
+    -webkit-animation: floating 2s ease infinite alternate;
+  }
+
+  /* @keyframes floating {
+    from {
+      transform: translateY(20px);
+      -webkit-transform: translateY(20px);
+      -moz-transform: translateY(20px);
+      -ms-transform: translateY(20px);
+      -o-transform: translateY(20px);
+    }
+    to {
+      transform: translateY(-50px);
+      -webkit-transform: translateY(-50px);
+      -moz-transform: translateY(-50px);
+      -ms-transform: translateY(-50px);
+      -o-transform: translateY(-50px);
+    }
+  } */
+}
+/* Javascript Clases */
+.show {
+  display: flex;
 }

@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Favicon -->
+    <link
+      rel="shortcut icon"
+      href="./assets/img/pedimon-ico.png"
+      type="image/x-icon"
+    />
     <title>PedimonYa App</title>
     <!-- Fontawesome -->
     <link
@@ -11,19 +17,18 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
     />
     <!-- Animate CSS -->
-    <link
+    <!-- <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
+    /> -->
 
     <!-- CSS -->
     <link rel="stylesheet" href="./assets/css/style.css" />
-    <link rel="stylesheet" href="./assets/css/desktop.css" />
   </head>
   <body>
     <!-- Header -->
     <header>
-      <nav>
+      <nav id="navbar">
         <ul class="menu">
           <li>
             <a href="#" class="logo-link"
@@ -35,9 +40,11 @@
           </li>
 
           <div class="container-items">
-            <li class="item"><a href="#about">About</a></li>
-            <li class="item"><a href="#description">Description</a></li>
-            <li class="item"><a href="#productos">Productos</a></li>
+            <li class="item item-link"><a href="#about">About</a></li>
+            <li class="item item-link">
+              <a href="#description">Description</a>
+            </li>
+            <li class="item item-link"><a href="#productos">Productos</a></li>
             <li class="item">
               <a href="#cartList"><i class="fa-solid fa-cart-shopping"></i></a>
             </li>
@@ -56,22 +63,16 @@
           <img
             src="./assets/img/pedimon-text.png"
             alt="Pedimon"
-            class="title-img animate__animated animate__bounce"
+            class="title-img"
           />
-          <p
-            class="animate__animated animate__fadeIn animate__infinite animate__slow"
-          >
+          <p>
             Busca tu Pokemon favorito y disfruta de los beneficios de tener un
             bicho de estos en tu casa! Hay como cinco millones para coleccionar!
           </p>
           <a href="#listProducts" class="btn">Los quiero atrapar</a>
         </div>
         <div class="about__content--img">
-          <img
-            src="./assets/img/pikachu-hero.png"
-            alt="pikachu hero"
-            class="animate__animated animate__flipInX animate__infinite"
-          />
+          <img src="./assets/img/pikachu-hero.png" alt="pikachu hero" />
         </div>
       </section>
       <!-- Terminada la seccion 1 -->
@@ -134,18 +135,18 @@
               alt="balbasaur"
               class="cokemon"
             />
-            <p class="product__title">La tortuga franklin</p>
+            <p class="product__title">Balbasaur</p>
             <span class="product__price">$125</span>
             <button class="product__btn">Comprar</button>
           </div>
           <!-- 2 -->
           <div class="product">
             <img
-              src="./assets/img/balbasaur.png"
+              src="./assets/img/gengar.png"
               alt="balbasaur"
               class="cokemon"
             />
-            <p class="product__title">La tortuga franklin</p>
+            <p class="product__title">Gengar</p>
             <span class="product__price">$125</span>
             <button class="disabled">Comprar</button>
             <div class="sinStock">Sin Stock. Volo</div>
@@ -153,44 +154,42 @@
           <!-- 3 -->
           <div class="product">
             <img
-              src="./assets/img/balbasaur.png"
+              src="./assets/img/takara.png"
               alt="balbasaur"
               class="cokemon"
             />
-            <p class="product__title">La tortuga franklin</p>
+            <p class="product__title">Articuno</p>
             <span class="product__price">$125</span>
             <button class="product__btn">Comprar</button>
           </div>
           <!-- 4 -->
           <div class="product">
             <img
-              src="./assets/img/balbasaur.png"
+              src="./assets/img/pikachu.png"
               alt="balbasaur"
               class="cokemon"
             />
-            <p class="product__title">La tortuga franklin</p>
+            <p class="product__title">Pikachu</p>
             <span class="product__price">$125</span>
-            <button class="disabled">Comprar</button>
-            <div class="sinStock">Sin Stock. Volo</div>
+            <button class="product__btn">Comprar</button>
           </div>
           <div class="product">
             <img
-              src="./assets/img/balbasaur.png"
+              src="./assets/img/squirtle.png"
               alt="balbasaur"
               class="cokemon"
             />
-            <p class="product__title">La tortuga franklin</p>
+            <p class="product__title">squirtle</p>
             <span class="product__price">$125</span>
-            <button class="disabled">Comprar</button>
-            <div class="sinStock">Sin Stock. Volo</div>
+            <button class="product__btn">Comprar</button>
           </div>
           <div class="product">
             <img
-              src="./assets/img/balbasaur.png"
+              src="./assets/img/pinguino.png"
               alt="balbasaur"
               class="cokemon"
             />
-            <p class="product__title">La tortuga franklin</p>
+            <p class="product__title">Piplup</p>
             <span class="product__price">$125</span>
             <button class="disabled">Comprar</button>
             <div class="sinStock">Sin Stock. Volo</div>
@@ -226,7 +225,7 @@
                 alt="pinguino"
                 class="item-img"
               />
-              <p class="cart__title" data-descr="hola">Vamo a calmarno</p>
+              <p class="cart__title">Vamo a calmarno</p>
               <span class="cart__price">$987</span>
             </div>
           </div>
@@ -266,8 +265,8 @@
           Cualquier inconveniente dirigirse al lobby que nos encargamos de todo
         </p>
       </div>
-
       <p>Hecho con ❤ en Nucba</p>
     </footer>
+    <script src="./assets/js/main.js"></script>
   </body>
 </html>
