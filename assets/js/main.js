@@ -82,7 +82,7 @@ const handleAddProduct = (e, product) => {
     return;
 
   for (let item in products) {
-    if (products[item].product === product) {
+    if (products[item].name === e.target.dataset.name) {
       products[item].count++;
       setCount();
       totalPrice();
