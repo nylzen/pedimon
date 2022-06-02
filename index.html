@@ -16,11 +16,6 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
     />
-    <!-- Animate CSS -->
-    <!-- <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    /> -->
 
     <!-- CSS -->
     <link rel="stylesheet" href="./assets/css/style.css" />
@@ -44,9 +39,12 @@
             <li class="item item-link">
               <a href="#description">Description</a>
             </li>
-            <li class="item item-link"><a href="#productos">Productos</a></li>
+            <li class="item item-link"><a href="#products">Productos</a></li>
             <li class="item">
-              <a href="#cartList"><i class="fa-solid fa-cart-shopping"></i></a>
+              <a href="#cartSection">
+                <i class="fa-solid fa-cart-shopping cart"></i>
+                <span id="totalItems"></span>
+              </a>
             </li>
           </div>
 
@@ -123,7 +121,7 @@
       </section>
       <!-- Terminada la section description -->
       <!--* List Products -->
-      <section class="listproducts__section" id="listProducts">
+      <section class="listproducts__section" id="products">
         <h2>Aca va la lista de los Cokemone</h2>
         <!-- Container para los pokemones -->
         <div class="products__container">
@@ -137,7 +135,16 @@
             />
             <p class="product__title">Balbasaur</p>
             <span class="product__price">$125</span>
-            <button class="product__btn">Comprar</button>
+            <button
+              class="product__btn"
+              data-img="./assets/img/balbasaur.png"
+              data-name="Balbasaur"
+              data-price="573"
+              data-count="1"
+              id="btnComprar"
+            >
+              Comprar
+            </button>
           </div>
           <!-- 2 -->
           <div class="product">
@@ -148,7 +155,16 @@
             />
             <p class="product__title">Gengar</p>
             <span class="product__price">$125</span>
-            <button class="disabled">Comprar</button>
+            <button
+              class="disabled"
+              data-img="./assets/img/gengar.png"
+              data-name="Gengar"
+              data-price="321"
+              data-count="1"
+              id="btnComprar"
+            >
+              Comprar
+            </button>
             <div class="sinStock">Sin Stock. Volo</div>
           </div>
           <!-- 3 -->
@@ -160,7 +176,16 @@
             />
             <p class="product__title">Articuno</p>
             <span class="product__price">$125</span>
-            <button class="product__btn">Comprar</button>
+            <button
+              class="product__btn"
+              data-img="./assets/img/takara.png"
+              data-name="Articuno"
+              data-price="192"
+              data-count="1"
+              id="btnComprar"
+            >
+              Comprar
+            </button>
           </div>
           <!-- 4 -->
           <div class="product">
@@ -171,7 +196,16 @@
             />
             <p class="product__title">Pikachu</p>
             <span class="product__price">$125</span>
-            <button class="product__btn">Comprar</button>
+            <button
+              class="product__btn"
+              data-img="./assets/img/pikachu.png"
+              data-name="Pikachu"
+              data-price="579"
+              data-count="1"
+              id="btnComprar"
+            >
+              Comprar
+            </button>
           </div>
           <div class="product">
             <img
@@ -181,7 +215,16 @@
             />
             <p class="product__title">squirtle</p>
             <span class="product__price">$125</span>
-            <button class="product__btn">Comprar</button>
+            <button
+              class="product__btn"
+              data-img="./assets/img/squirtle.png"
+              data-name="Squirtle"
+              data-price="225"
+              data-count="1"
+              id="btnComprar"
+            >
+              Comprar
+            </button>
           </div>
           <div class="product">
             <img
@@ -191,22 +234,33 @@
             />
             <p class="product__title">Piplup</p>
             <span class="product__price">$125</span>
-            <button class="disabled">Comprar</button>
-            <div class="sinStock">Sin Stock. Volo</div>
+            <button
+              class="product__btn"
+              id="btnComprar"
+              data-img="./assets/img/pinguino.png"
+              data-name="Piplup"
+              data-price="912"
+              data-count="1"
+            >
+              Comprar
+            </button>
+
+            <!-- <div class="sinStock">Sin Stock. Volo</div> -->
           </div>
         </div>
       </section>
       <!-- Section Terminada -->
       <!-- Section Carrito -->
-      <section class="cart__section" id="carList">
+      <section class="cart__section" id="cartSection">
         <h2>Ponele que aca va un carrito</h2>
         <p>
           Otra que podemos hacer es que se mande al carrito en el navbar y se
           abra, pero bueno, despues con Js
         </p>
-        <div class="cart__container">
+        <div class="cart__container" id="cart">
+          <div class="productVacio">No hay productos seleccionados</div>
           <!-- item 1 -->
-          <div class="cart__item">
+          <!-- <div class="cart__item">
             <div class="cart__item--content">
               <img
                 src="./assets/img/squirtle.png"
@@ -216,36 +270,15 @@
               <p class="cart__title">Vamo a calmarno</p>
               <span class="cart__price">$987</span>
             </div>
+          </div> -->
+        </div>
+        <!-- total -->
+        <div class="total__items">
+          <div class="total__price">
+            <p class="total">Total:</p>
+            <span id="totalProducts"></span>$
           </div>
-          <!-- item 2 -->
-          <div class="cart__item">
-            <div class="cart__item--content">
-              <img
-                src="./assets/img/squirtle.png"
-                alt="pinguino"
-                class="item-img"
-              />
-              <p class="cart__title">Vamo a calmarno</p>
-              <span class="cart__price">$987</span>
-            </div>
-          </div>
-          <!-- item 3 -->
-          <div class="cart__item">
-            <div class="cart__item--content">
-              <img
-                src="./assets/img/squirtle.png"
-                alt="pinguino"
-                class="item-img"
-              />
-              <p class="cart__title">Vamo a calmarno</p>
-              <span class="cart__price">$987</span>
-            </div>
-          </div>
-          <!-- total -->
-          <div class="total__items">
-            <p class="total">Total: $NaN</p>
-            <button class="cart__btn">Finalizar Compra</button>
-          </div>
+          <button class="cart__btn">Finalizar Compra</button>
         </div>
       </section>
     </main>

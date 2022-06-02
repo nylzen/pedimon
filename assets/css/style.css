@@ -21,6 +21,10 @@
   height: auto;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   width: 100vw;
   max-width: 100%;
@@ -98,6 +102,27 @@ nav {
 
 .menu .logo {
   width: 15rem;
+}
+
+.cart {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  text-align: center;
+}
+
+#totalItems {
+  position: absolute;
+  top: -10px;
+  right: -5px;
+  background-color: #f01919;
+  color: white;
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
 }
 
 /** Section 1 */
@@ -198,7 +223,7 @@ nav {
   font-weight: var(--thin);
 }
 /* Terminada description */
-/** List Products */
+/** Seccion 3 List Products */
 .listproducts__section {
   padding: 8rem 0;
 }
@@ -226,12 +251,12 @@ nav {
   margin-top: 7rem;
   width: 350px;
   height: 520px;
-  border-radius: 3rem;
+  border-radius: 1rem;
   position: relative;
-  -webkit-border-radius: 3rem;
-  -moz-border-radius: 3rem;
-  -ms-border-radius: 3rem;
-  -o-border-radius: 3rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
 }
 
 .product img {
@@ -307,6 +332,9 @@ nav {
   text-align: center;
   margin: 1.5rem 0 2rem 0;
   color: var(--blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .item-img {
@@ -317,7 +345,7 @@ nav {
   width: 90%;
   background: white;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1rem;
   border-radius: 1rem;
   color: var(--blue);
   -webkit-border-radius: 1rem;
@@ -332,6 +360,10 @@ nav {
   align-items: center;
 }
 
+.cart__title {
+  align-self: center;
+}
+
 .cart__price {
   font-size: 2rem;
   font-weight: var(--medium);
@@ -344,8 +376,9 @@ nav {
   justify-content: center;
   border-top: 1px solid var(--blue);
   font-size: 1.6rem;
-  margin-top: 2rem;
+  margin: 2rem auto 0 auto;
   padding: 1rem 2rem;
+  max-width: 800px;
 }
 
 .cart__btn {
@@ -361,6 +394,13 @@ nav {
   cursor: pointer;
   width: 400px;
   text-transform: uppercase;
+}
+
+.total__price {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  font-weight: var(--medium);
 }
 /* Terminado el cartlist */
 /** Footer */
@@ -413,7 +453,7 @@ footer .title {
     -moz-transition: top 0.5s;
     -ms-transition: top 0.5s;
     -o-transition: top 0.5s;
-}
+  }
   /* Menu */
   .menu {
     flex-wrap: nowrap;
