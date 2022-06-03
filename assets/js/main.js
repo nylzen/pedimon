@@ -26,6 +26,7 @@ window.addEventListener("scroll", () => {
   lastScrollTop = scrollTop;
 });
 
+// Carrito
 let products = [];
 
 const setCount = () => {
@@ -59,9 +60,12 @@ const productList = () => {
           <div>
           <img src="${product.img}" class="item-img">
           <span>x ${product.count} </span>
+          <span>(c/u $${product.price})</span>
           </div>
           <p class="cart__title">${product.name}</p>
-          <span class="cart__price">$${product.price}</span>
+          <span class="cart__price">$${
+            product.count === 1 ? product.price : product.price * product.count
+          }</span>
         </div>
           </div>
         </div>
@@ -71,7 +75,7 @@ const productList = () => {
     .join("");
 };
 
-const handleAddProduct = (e, product) => {
+const handleAddProduct = (e) => {
   e.preventDefault();
 
   // Si el target del elemento no es el button con la clase product__buton o que tenga la clase disabled, que no haga nada.
@@ -85,13 +89,11 @@ const handleAddProduct = (e, product) => {
     if (products[item].name === e.target.dataset.name) {
       products[item].count++;
       setCount();
+      products[item].price * products[item].count;
       totalPrice();
       productList();
       return;
     }
-    console.log(products[item].product);
-
-    console.log(product);
   }
   // Guardo los target de los dataset
   const newProduct = {
