@@ -107,20 +107,56 @@ const productList = () => {
       <img src="${product.img}" class="item-img">
       <span>x ${product.count} </span>
       <span>(c/u $${product.price})</span>
+      
       </div>
       <p class="cart__title">${product.name}</p>
       <span class="cart__price">$${
         product.count === 1 ? product.price : product.price * product.count
       }</span>
+      <button id="${product.name}" onclick='deleteItem()' data-btn='${
+        product.name
+      }'>X</button>
     </div>
       </div>
     </div>
 </div> `;
     })
+
     .join('');
+};
+
+//  a function para eliminar un producto del carrito
+
+const deleteItem = () => {
+  const btn = document.querySelectorAll('button');
+
+  btn.forEach((item) => {
+    item.addEventListener('click', (e) => {
+      const name = e.target.dataset.btn;
+      products = products.filter((product) => product.name !== name);
+      setCount();
+      totalPrice();
+      productList();
+    });
+  });
 };
 
 // Listener boton comprar
 btnComprar.forEach((item) => {
   item.addEventListener('click', handleAddProduct);
+});
+
+// Show Navbar Scroll
+const navbar = document.getElementById('navbar');
+let lastScrollTop;
+
+window.addEventListener('scroll', () => {
+  let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  if (scrollTop > lastScrollTop) {
+    navbar.style.top = '-150px';
+  } else {
+    navbar.style.top = '0';
+  }
+
+  lastScrollTop = scrollTop;
 });
